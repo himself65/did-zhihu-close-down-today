@@ -21,7 +21,7 @@ Toolkit.run(
       })
     }
 
-    const time = moment().format('YYYY-Mo-Do kk:mm ZZ')
+    const time = moment().format('YYYY-MM-DD kk:mm ZZ')
 
     let content = ''
     if (closed) {
