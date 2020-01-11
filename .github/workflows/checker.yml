@@ -30,6 +30,5 @@ jobs:
           node index.js
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_USERNAME: himself65
           GIST_ID: 45b82f824f6185b29555a6da516b7337

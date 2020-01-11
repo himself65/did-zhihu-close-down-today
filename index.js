@@ -2,10 +2,7 @@ require('dotenv').config()
 
 const axios = require('axios')
 const { Toolkit } = require('actions-toolkit')
-const { GistBox, MAX_LINES, MAX_LENGTH } = require('gist-box')
-
-const truncate = str =>
-  str.length <= MAX_LENGTH ? str : str.slice(0, MAX_LENGTH - 3) + '...'
+const { GistBox } = require('gist-box')
 
 Toolkit.run(
   async tools => {
@@ -50,6 +47,6 @@ Toolkit.run(
   },
   {
     event: 'schedule',
-    secrets: ['GITHUB_TOKEN', 'GH_PAT', 'GH_USERNAME', 'GIST_ID']
+    secrets: ['GH_PAT', 'GH_USERNAME', 'GIST_ID']
   }
 )
