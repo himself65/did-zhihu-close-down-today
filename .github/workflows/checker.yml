@@ -1,0 +1,35 @@
+name: Check if Zhihu.com has closed down
+
+on:
+  schedule:
+    - cron: "0 0/30 * * *"
+
+jobs:
+  checker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Use Node.js 12.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+      - name: Cache NPM dependencies
+        uses: actions/cache@v1
+        with:
+          path: node_modules
+          key: ${{ runner.OS }}-npm-cache
+          restore-keys: |
+            ${{ runner.OS }}-npm-cache-
+      - name: Install Dependencies
+        run: |
+          npm install --registry=https://registry.npm.taobao.org -g yarn
+          yarn config set registry https://registry.npm.taobao.org
+          yarn --frozen-lockfile --non-interactive
+      - name: Run Script
+        run: |
+          node index.js
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_USERNAME: himself65
+          GIST_ID: 45b82f824f6185b29555a6da516b7337
