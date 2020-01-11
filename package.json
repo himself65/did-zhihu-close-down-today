@@ -12,6 +12,7 @@
     "actions-toolkit": "^2.2.0",
     "axios": "^0.19.1",
     "dotenv": "^8.2.0",
-    "gist-box": "^0.3.0"
+    "gist-box": "^0.3.0",
+    "moment": "^2.24.0"
   }
 }

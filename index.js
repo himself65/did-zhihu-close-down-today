@@ -1,6 +1,7 @@
 require('dotenv').config()
 
 const axios = require('axios')
+const moment = require('moment')
 const { Toolkit } = require('actions-toolkit')
 const { GistBox } = require('gist-box')
 
@@ -20,14 +21,20 @@ Toolkit.run(
       })
     }
 
+    const time = moment().format('YYYY-Mo-Do kk:mm ZZ')
+
     let content = ''
     if (closed) {
-      content = `知乎今天倒闭了
-      Zhihu.com have closed down today!!!😊
+      content = `知乎真的倒闭了！！！
+Zhihu.com have closed down today!!!😊
+
+${time}
       `
     } else {
-      content = `知乎今天没有倒闭
-      Zhihu.com haven't closed down today. 😔
+      content = `知乎还没有倒闭……
+Zhihu.com haven't closed down today... 😔
+
+${time}
       `
     }
 
