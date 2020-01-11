@@ -46,7 +46,7 @@ Toolkit.run(
     }
   },
   {
-    event: 'schedule',
+    event: ['schedule', 'push'],
     secrets: ['GH_PAT', 'GH_USERNAME', 'GIST_ID']
   }
 )
