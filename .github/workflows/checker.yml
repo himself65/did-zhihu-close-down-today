@@ -3,6 +3,9 @@ name: Check if Zhihu.com has closed down
 on:
   schedule:
     - cron: "0 0/30 * * *"
+  push:
+    branches:
+      - master
 
 jobs:
   checker:
