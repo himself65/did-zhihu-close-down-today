@@ -10,18 +10,14 @@ Toolkit.run(
 
     // Get the user's public events
     tools.log.debug(`Getting activity for ${GH_USERNAME}`)
-    const events = await tools.github.activity.listPublicEventsForUser({
-      username: GH_USERNAME,
-      per_page: 100
-    })
-    tools.log.debug(
-      `Activity for ${GH_USERNAME}, ${events.data.length} events found.`
-    )
 
     let closed = true
     for (let i = 0; i < 3; i++) {
-      await axios.get('https://www.zhihu.com').
-        then(res => res.status === 200 ? closed = false : [])
+      await axios.get('https://www.zhihu.com').then(res => {
+        if (res.status === 200) {
+          closed = false
+        }
+      })
     }
 
     let content = ''
