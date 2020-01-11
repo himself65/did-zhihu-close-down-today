@@ -1,0 +1,17 @@
+{
+  "name": "did-zhihu-close-down-today",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/axios": "^0.14.0",
+    "@types/node": "^13.1.6",
+    "standard": "^14.3.1"
+  },
+  "dependencies": {
+    "actions-toolkit": "^2.2.0",
+    "axios": "^0.19.1",
+    "dotenv": "^8.2.0",
+    "gist-box": "^0.3.0"
+  }
+}
