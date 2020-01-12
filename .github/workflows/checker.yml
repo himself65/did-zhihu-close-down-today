@@ -22,7 +22,7 @@ jobs:
           path: node_modules
           key: ${{ runner.OS }}-npm-cache
           restore-keys: |
-            ${{ runner.OS }}-npm-cache-
+            ${{ runner.OS }}-npm-cache
       - name: Install Dependencies
         run: |
           npm install -g yarn
