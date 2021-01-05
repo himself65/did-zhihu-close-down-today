@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "actions-toolkit": "^2.2.0",
-    "axios": "^0.19.1",
+    "axios": "^0.21.1",
     "dotenv": "^8.2.0",
     "gist-box": "^0.3.0",
     "moment": "^2.24.0"
